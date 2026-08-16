@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS->Text to Speech</title>
 
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFEsB10N3Z-y6mUNxgcTVxoUQ2Q_MSjauJnFlqVpJh1BkQaQcgSTyxJta0J_E-O6oqfKU&usqp=CAU" type="image/png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <h1 class="page-heading">AI Powered TTS</h1>
+
+    <div class="container">
+
+        <form method="POST" id="ttsForm">
+
+            <select name="gender" id="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+
+            <textarea name="text" id="text" rows="4" placeholder="Type something..."></textarea>
+
+            <div class="buttons">
+                <button type="button" id="playBtn">▶ Play</button>
+                <button type="button" id="pauseBtn">⏸ Pause</button>
+                <button type="button" id="downloadBtn">Download text<br>file</button>
+            </div>
+
+        </form>
+
+        <div id="message" class="message"></div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
